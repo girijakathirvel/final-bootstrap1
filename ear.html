@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Art & Craft - Necklace</title>
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Bootstrap Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+  />
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playwrite+AU+NSW:wght@100..400&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    body {
+      background-color: #f9f9f9;
+    }
+
+    .liked {
+      color: red !important;
+    }
+
+    .navbar-brand {
+      font-size: 30px;
+      color: darkmagenta;
+      margin-left:20px;
+    }
+
+    .nav-link {
+      color: darkorchid !important;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .card img {
+      height: 250px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    footer ul {
+      padding: 0;
+      list-style: none;
+    }
+
+    footer ul li {
+      margin-bottom: 8px;
+    }
+
+    footer h6 {
+      margin-bottom: 15px;
+    }
+
+    footer .form-control {
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+    <div class="container-fluid px-4">
+      <img src="h.jpeg" alt="Logo" style="height: 100px; width: 250px" />
+      <a class="navbar-brand ms-3" href="#"><b>ART AND CRAFT</b></a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavDropdown"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ms-auto align-items-center">
+          <li class="nav-item"><b><a class="nav-link" href="index.html"  style="font-size: 20px;margin-left:30px;">HOME</a></b></li>
+          <li class="nav-item"><b><a class="nav-link" href="neck.html"  style="font-size: 20px;margin-left:30px;">NECKLACE</a></b></li>
+          <li class="nav-item"><b><a class="nav-link" href="ear.html"  style="font-size: 20px;margin-left:30px;">EARRINGS</a></b></li>
+          <li class="nav-item"><b><a class="nav-link" href="bang.html"  style="font-size: 20px;margin-left:30px;">BANGLES</a></b></li>
+          <li class="nav-item"><b><a class="nav-link" href="anklet.html"  style="font-size: 20px;margin-left:30px;">BRACELETS</a></b></li>
+          <li class="nav-item"><b><a class="nav-link" href="ring.html"  style="font-size: 20px;margin-left:30px;">RINGS</a></b></li>
+          <li class="nav-item"><b><a class="nav-link" href="shop.html"  style="font-size: 20px;margin-left:30px;">SHOP</a></b></li>
+          <li class="nav-item ms-3">
+            <span id="cart-count" class="badge bg-danger ms-1">0</span>
+          </li>
+
+          <li class="nav-item ms-3">
+            <a
+              class="nav-link"
+              href="#"
+              data-bs-toggle="modal"
+              data-bs-target="#loginModal"
+            >
+              <i class="bi bi-person-fill" style="font-size: 30px"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Login Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" style="color: darkmagenta">Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form onsubmit="login(event)">
+            <div class="mb-3">
+              <label for="loginEmail" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="loginEmail" required />
+            </div>
+            <div class="mb-3">
+              <label for="loginPassword" class="form-label">Password</label>
+              <input type="password" class="form-control" id="loginPassword" required />
+            </div>
+            <button
+              type="submit"
+              class="btn"
+              style="background-color: darkmagenta; color: white"
+            >
+              Login
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product Section -->
+  <div class="container my-5">
+    <h2 class="text-center mb-4" style="color: darkmagenta;">NECKLACE COLLECTION</h2>
+    <div class="row" id="product-list">
+      <!-- Product cards will be dynamically added here -->
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white pt-5 pb-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 mb-4">
+          <h6 class="fw-bold text-uppercase">Categories</h6>
+          <ul>
+            <li>Jewellery</li>
+            <li>Sterling Silver</li>
+            <li>Beads</li>
+            <li>DIY Jewellery Kits</li>
+            <li>Craft Materials</li>
+          </ul>
+        </div>
+
+        <div class="col-md-3 mb-4">
+          <h6 class="fw-bold text-uppercase">Help</h6>
+          <ul>
+            <li>Affiliate Program</li>
+            <li>Contact</li>
+            <li>Shipping</li>
+            <li>Refund Policy</li>
+          </ul>
+        </div>
+
+        <div class="col-md-3 mb-4">
+          <h6 class="fw-bold text-uppercase">Quick Links</h6>
+          <ul>
+            <li>Privacy Policy</li>
+            <li>About</li>
+            <li>FAQs</li>
+          </ul>
+        </div>
+
+        <div class="col-md-3 mb-4">
+          <strong>Jaunty Overseas Pvt. Ltd</strong><br />
+          C-84-55, EPIP, Shastripuram<br />
+          Agra-282007, India<br /><br />
+          <span>Call or WhatsApp: +91-8909060625</span><br />
+          <span>Email: support@beadsnfashion.com</span><br /><br />
+          <a href="#"><i class="bi bi-twitter text-white me-2"></i></a>
+          <a href="#"><i class="bi bi-facebook text-white me-2"></i></a>
+          <a href="#"><i class="bi bi-instagram text-white"></i></a>
+        </div>
+      </div>
+
+      <div class="row mt-4 text-center">
+        <h6 class="fw-bold">Subscribe to our Handmade</h6>
+        <p>Get the latest updates on new products and upcoming sales</p>
+        <form
+          class="d-flex justify-content-center"
+          style="max-width: 400px; margin: auto"
+          onsubmit="sub(event)"
+        >
+          <input
+            type="email"
+            class="form-control"
+            placeholder="Enter your email"
+            required
+          />
+          <button class="btn btn-info ms-2" type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const products = [
+        { name: "VE00071", price: 458, img: "er1.jpeg" },
+        { name: "VE00072", price: 355, img: "er2.jpeg" },
+        { name: "VE00073", price: 250, img: "er3.jpeg" },
+        { name: "VE00074", price: 350, img: "er4.jpeg" },
+        { name: "VE00075", price: 450, img: "er5.jpeg" },
+        { name: "VE00076", price: 359, img: "er6.jpeg" },
+        { name: "VE00077", price: 499, img: "er7.jpeg" },
+        { name: "VE00078", price: 475, img: "er8.jpeg" },
+        { name: "VE00079", price: 350, img: "er9.jpeg" },
+        { name: "VE00080", price: 280, img: "er10.jpeg" },
+        { name: "VE00081", price: 420, img: "er11.jpeg" },
+        { name: "VE00082", price: 445, img: "er12.jpeg" },
+        { name: "VE00083", price: 350, img: "er13.jpeg" },
+        { name: "VE00084", price: 450, img: "er14.jpeg" },
+        { name: "VE00085", price: 289, img: "er15.jpeg" },
+        { name: "VE00086", price: 340, img: "er16.jpeg" },
+        { name: "VE00087", price: 450, img: "er17.jpeg" },
+        { name: "VE00088", price: 280, img: "er18.jpeg" },
+        { name: "VE00089", price: 320, img: "er19.jpeg" },
+        { name: "VE00090", price: 360, img: "er20.jpeg" },
+      ];
+
+      const productList = document.getElementById("product-list");
+      const cartCount = document.getElementById("cart-count");
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      function updateCartCount() {
+        cartCount.textContent = cart.length;
+      }
+
+      updateCartCount();
+
+      products.forEach((p) => {
+        const col = document.createElement("div");
+        col.className = "col-md-3 mb-4";
+
+        col.innerHTML = `
+          <div class="card p-2 text-center bg-light">
+            <img src="${p.img}" class="card-img-top" alt="${p.name}">
+            <h6 class="mt-2">${p.name}</h6>
+            <p>Rs. ${p.price}</p>
+            <div>
+              <i class="bi bi-cart4 add-to-cart" style="cursor:pointer;font-size:25px;color:darkorchid;"></i>
+              <i class="bi bi-heart-fill like-btn" style="margin-left:10px;cursor:pointer;font-size:25px;color:darkorchid;"></i>
+            </div>
+          </div>
+        `;
+
+        // Add to Cart
+        col.querySelector(".add-to-cart").addEventListener("click", () => {
+          if (!cart.find((item) => item.name === p.name)) {
+            cart.push(p);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            updateCartCount();
+            alert(`${p.name} added to cart!`);
+          } else {
+            alert(`${p.name} is already in your cart.`);
+          }
+        });
+
+        // Like button
+        col.querySelector(".like-btn").addEventListener("click", (e) => {
+          e.target.classList.toggle("liked");
+        });
+
+        productList.appendChild(col);
+      });
+    });
+
+    function login(event) {
+      event.preventDefault();
+      alert("You have logged in successfully!");
+    }
+
+    function sub(event) {
+      event.preventDefault();
+      alert("Thank you for subscribing!");
+    }
+  </script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
